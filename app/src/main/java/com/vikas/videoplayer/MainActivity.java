@@ -178,9 +178,9 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         // Create a progressbar
         pDialog = new ProgressDialog(MainActivity.this);
         // Set progressbar title
-        pDialog.setTitle(" Video Streaming ");
+        pDialog.setTitle(" Loading Video List ");
         // Set progressbar message
-        pDialog.setMessage("Buffering...");
+        //pDialog.setMessage("Buffering...");
         pDialog.setIndeterminate(false);
         pDialog.setCancelable(false);
     }
