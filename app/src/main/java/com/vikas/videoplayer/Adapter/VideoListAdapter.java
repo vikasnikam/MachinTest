@@ -24,7 +24,8 @@ import java.util.List;
 public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.MyViewHolder> {
     Context context;
     private List<VideoData> videolist;
-    String  fav;
+    RecyclerView recyclerView;
+    //final VideoData videoData;
     private final View.OnClickListener mOnClickListener = new MyOnClickListener();
     public class MyViewHolder extends RecyclerView.ViewHolder {
        public TextView title;
@@ -38,9 +39,10 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.MyVi
         }
     }
 
-    public VideoListAdapter(Context context, List<VideoData> videolist) {
+    public VideoListAdapter(Context context, List<VideoData> videolist, RecyclerView recyclerView) {
         this.context = context;
         this.videolist = videolist;
+        this.recyclerView = recyclerView;
     }
 
     @Override
@@ -66,7 +68,7 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.MyVi
         }else {
             holder.fav_icon.setImageResource(R.drawable.ic_favorite_white);
         }
-        holder.title.setOnClickListener(new View.OnClickListener() {
+       /* holder.title.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(context, VideoActivity.class);
@@ -74,7 +76,7 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.MyVi
                 System.out.println("Data"+videoData.getFile_name());
                 context.startActivity(intent);
             }
-        });
+        });*/
 
     }
 
@@ -86,8 +88,11 @@ public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.MyVi
     private class MyOnClickListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
-
-
+            int itemPosition = recyclerView.getChildLayoutPosition(v);
+            Intent intent=new Intent(context, VideoActivity.class);
+            intent.putExtra("VIDEO_FILE",videolist.get(itemPosition).getFile_name());
+            System.out.println("Data"+videolist.get(itemPosition).getFile_name());
+            context.startActivity(intent);
         }
     }
 }

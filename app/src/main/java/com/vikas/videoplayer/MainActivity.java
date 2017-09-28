@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                // System.out.println("TemparrayList_contactList onTextChanged size=" + TemparrayList_allcontactList.size());
                 if (tempArrayList_videoDataList.size() != 0) {
                     // Set Data to Recycler view
-                    videoListAdapter = new VideoListAdapter(MainActivity.this,tempArrayList_videoDataList);
+                    videoListAdapter = new VideoListAdapter(MainActivity.this,tempArrayList_videoDataList,videoRecyclerView);
                     RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
                     videoRecyclerView.setLayoutManager(mLayoutManager);
                     videoRecyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                // System.out.println("TemparrayList_contactList onTextChanged size=" + TemparrayList_allcontactList.size());
                 if (tempArrayList_videoDataList.size() != 0) {
                     // Set Data to Recycler view
-                    videoListAdapter = new VideoListAdapter(MainActivity.this,tempArrayList_videoDataList);
+                    videoListAdapter = new VideoListAdapter(MainActivity.this,tempArrayList_videoDataList,videoRecyclerView);
                     RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
                     videoRecyclerView.setLayoutManager(mLayoutManager);
                     videoRecyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                     // Set Data to Recycler view
-                    videoListAdapter = new VideoListAdapter(MainActivity.this,videoDataList);
+                    videoListAdapter = new VideoListAdapter(MainActivity.this,videoDataList,videoRecyclerView);
                     RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
                     videoRecyclerView.setLayoutManager(mLayoutManager);
                     videoRecyclerView.setItemAnimator(new DefaultItemAnimator());
