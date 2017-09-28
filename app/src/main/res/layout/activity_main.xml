@@ -8,12 +8,18 @@
     <EditText
         android:id="@+id/edt_search"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:hint="Search video"/>
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refersh_layout"
+        android:layout_below="@+id/edt_search"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <android.support.v7.widget.RecyclerView
         android:layout_marginTop="5dp"
-        android:layout_below="@+id/edt_search"
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="vertical" />
+    </android.support.v4.widget.SwipeRefreshLayout>
 </RelativeLayout>
